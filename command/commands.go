@@ -63,6 +63,7 @@ import (
 	physZooKeeper "github.com/hashicorp/vault/physical/zookeeper"
 	physFile "github.com/hashicorp/vault/sdk/physical/file"
 	physInmem "github.com/hashicorp/vault/sdk/physical/inmem"
+	physReplica "github.com/ragona/vault-local-read-replica"
 
 	sr "github.com/hashicorp/vault/serviceregistration"
 	csr "github.com/hashicorp/vault/serviceregistration/consul"
@@ -154,6 +155,7 @@ var (
 		"mysql":                  physMySQL.NewMySQLBackend,
 		"oci":                    physOCI.NewBackend,
 		"postgresql":             physPostgreSQL.NewPostgreSQLBackend,
+		"replica":                physReplica.NewLocalReplicaBackend,
 		"s3":                     physS3.NewS3Backend,
 		"spanner":                physSpanner.NewBackend,
 		"swift":                  physSwift.NewSwiftBackend,
